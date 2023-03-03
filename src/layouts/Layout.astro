@@ -1,35 +1,53 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+  /* arabic */
+  @font-face {
+    font-family: "Vazirmatn";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/vazirmatn/v6/Dxxo8j6PP2D_kU2muijlGMWWMmk.woff2)
+      format("woff2");
+    unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41,
+      U+FB50-FDFF, U+FE80-FEFC;
+  }
+
+  :root {
+    --flag-green: 24, 163, 0;
+    --flag-gold: 212, 175, 55;
+    --flag-red: 235, 64, 52;
+
+    --accent: var(--flag-gold);
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--flag-green)),
+      rgb(var(--flag-gold)) 10%,
+      rgb(var(--flag-red)) 50%,
+      white 60%
+    );
+  }
+  html {
+    font-family: Vazirmatn, system-ui, sans-serif;
+    background-color: #f6f6f6;
+  }
 </style>
