@@ -4,6 +4,8 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+
+import "../styles/base.css";
 ---
 
 <!DOCTYPE html>
@@ -16,38 +18,17 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <header class="mt-6 flex justify-center items-center">
+      <a href="/">
+        <h1 class="text-3xl font-medium">
+          <span style="color: rgb(var(--flag-green))">انقلاب</span>
+          <span style="color: rgb(var(--flag-gold))">مَردُمی</span>
+          <span style="color: rgb(var(--flag-red))">ایران</span>
+        </h1>
+      </a>
+    </header>
+    <main class="max-w-screen-md m-auto py-4 px-2">
+      <slot />
+    </main>
   </body>
 </html>
-<style is:global>
-  /* arabic */
-  @font-face {
-    font-family: "Vazirmatn";
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/vazirmatn/v6/Dxxo8j6PP2D_kU2muijlGMWWMmk.woff2)
-      format("woff2");
-    unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41,
-      U+FB50-FDFF, U+FE80-FEFC;
-  }
-
-  :root {
-    --flag-green: 24, 163, 0;
-    --flag-gold: 212, 175, 55;
-    --flag-red: 235, 64, 52;
-
-    --accent: var(--flag-gold);
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--flag-red)),
-      rgb(var(--flag-gold)) 20%,
-      rgb(var(--flag-green)) 40%,
-      white 60%
-    );
-  }
-  html {
-    font-family: Vazirmatn, system-ui, sans-serif;
-    background-color: #f6f6f6;
-  }
-</style>

@@ -1,0 +1,65 @@
+---
+import SectionIntro from "../components/SectionIntro.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="روش‌های مشارکت">
+  <SectionIntro h2="مشارکت در انقلاب">
+    <div class="bg-flag-green/30 rounded-md p-4 pb-2 my-4 text-center">
+      <p class="text-lg">
+        امشب رأس ساعت ۲۱ چراغ‌های منزل خود را برای یک دقیقه خاموش کنید.
+      </p>
+      <div class="flex flex-col mt-4">
+        <div class="text-2xl font-medium font-mono" id="countdown">
+          00:00:00
+        </div>
+        <div>مانده تا ساعت ۲۱</div>
+      </div>
+    </div>
+
+    <p>
+      پیروزی موفقیت‌آمیز انقلاب نیاز به مشارکت همگانی مردم دارد. این صفحه با
+      توجه به شرایط فعلی کشور، انقلاب، و توانایی‌های شما، فعالیت‌هایی پیشنهاد
+      می‌کند تا شما هم بتوانید با سایر مردم به طور متحد و بدون ریسک هزینه
+      جانی/مالی در انقلاب مشارکت داشته باشید.
+    </p>
+    <p class="mt-2">
+      به خاطر داشته باشید مشارکت شما هر چقدر هم به نظر کوچک بیاید برای پیروزی
+      موفقیت‌آمیز انقلاب الزامی است. بدون قطره‌های آب دریایی وجود نخواهد داشت.
+    </p>
+    <p class="mt-2">
+      برای پیشنهاد فعالیت‌های مخصوص شما، به سوالات زیر پاسخ دهید.
+    </p>
+  </SectionIntro>
+</Layout>
+
+<style>
+  main {
+    background-color: var(--bor);
+  }
+</style>
+
+<script>
+  let countdownDiv = document.getElementById("countdown") as HTMLDivElement;
+  let countdownDate = new Date();
+  countdownDate.setHours(21, 0, 0, 0);
+
+  setInterval(() => {
+    let distance = countdownDate.getTime() - new Date().getTime();
+
+    // Time calculations for hours, minutes and seconds
+    let hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    )
+      .toString()
+      .padStart(2, "0");
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+      .toString()
+      .padStart(2, "0");
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000)
+      .toString()
+      .padStart(2, "0");
+
+    countdownDiv.innerHTML = `${hours}:${minutes}:${seconds}`;
+  }, 1000);
+</script>

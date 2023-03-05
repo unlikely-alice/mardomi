@@ -1,66 +1,57 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import SectionIntro from "../components/SectionIntro.astro";
 ---
 
 <Layout title="انقلاب مردمی ایران">
-  <main>
-    <h1>
-      <span style="color: rgb(var(--flag-green))">انقلاب</span>
-      <span style="color: rgb(var(--flag-gold))">مَردُمی</span>
-      <span style="color: rgb(var(--flag-red))">ایران</span>
-    </h1>
-    <p class="instructions">
+  <SectionIntro>
+    <p>
       در مهر ۱۴۰۱ انقلابی در مردم ایران شکل گرفت، انقلابی از مردم برای مردم.
       مردم ایران دیگر انقلاب‌اسلامی را نمی‌خواهند و دنبال شکل‌گیری موفقیت‌آمیز
       حکومتی مردمی هستند.
     </p>
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://docs.astro.build/"
-        title="منطق انقلاب"
-        body="استدلال و تفکر مردم ایران در مورد لزوم انقلاب."
-      />
-      <Card
-        href="https://astro.build/chat/"
-        title="ایرانِ آینده"
-        body="ترسیم تصویری از آینده‌ی ایران و ساختار حکومتی مطلوب."
-      />
-      <Card
-        href="https://astro.build/integrations/"
-        title="روش‌های مشارکت"
-        body="فعالیت‌های ساده و بی‌خطر برای تسریع در پیروزی انقلاب."
-      />
-      <Card
-        href="https://astro.build/chat/"
-        title="آمار و گزارش"
-        body="آمار و گزارش‌های مشارکت و انگیزه‌ی مردم برای انقلاب."
-      />
-      <Card
-        href="https://astro.build/themes/"
-        title="کارگروه انقلاب"
-        body="با فعالین و گروه‌های تشکیل شده برای انقلاب آشنا شوید."
-      />
-      <Card
-        href="https://astro.build/chat/"
-        title="اسناد انقلاب"
-        body="قراردادهای امضاء شده بین فعالین شناخته شده‌ی انقلاب"
-      />
-      <Card
-        href="https://astro.build/chat/"
-        title="اطلاع‌رسانی"
-        body="حتی در زمان قطع اینترنت از اخبار‌های انقلابی با‌خبر شوید."
-      />
-    </ul>
-  </main>
+  </SectionIntro>
+  <ul role="list" class="link-card-grid">
+    <Card
+      href="https://docs.astro.build/"
+      title="منطق انقلاب"
+      body="استدلال و تفکر مردم ایران در مورد لزوم انقلاب."
+    />
+    <Card
+      href="https://astro.build/chat/"
+      title="ایرانِ آینده"
+      body="ترسیم تصویری از آینده‌ی ایران و ساختار حکومتی مطلوب."
+    />
+    <Card
+      href="/participation"
+      title="مشارکت در انقلاب"
+      body="فعالیت‌های ساده و بی‌خطر برای تسریع در پیروزی انقلاب."
+    />
+    <Card
+      href="https://astro.build/chat/"
+      title="آمار و گزارش"
+      body="آمار و گزارش‌های مشارکت و انگیزه‌ی مردم برای انقلاب."
+    />
+    <Card
+      href="https://astro.build/themes/"
+      title="کارگروه انقلاب"
+      body="با فعالین و گروه‌های تشکیل شده برای انقلاب آشنا شوید."
+    />
+    <Card
+      href="https://astro.build/chat/"
+      title="اسناد انقلاب"
+      body="قراردادهای امضاء شده بین فعالین شناخته شده‌ی انقلاب"
+    />
+    <Card
+      href="https://astro.build/chat/"
+      title="اطلاع‌رسانی"
+      body="حتی در زمان قطع اینترنت از اخبار‌های انقلابی با‌خبر شوید."
+    />
+  </ul>
 </Layout>
 
 <style>
-  main {
-    margin: auto;
-    padding: 1.5rem;
-    max-width: 60ch;
-  }
   h1 {
     font-size: 3rem;
     font-weight: 800;
