@@ -5,31 +5,48 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="روش‌های مشارکت">
   <SectionIntro h2="مشارکت در انقلاب">
-    <div class="bg-flag-green/30 rounded-md p-4 pb-2 my-4 text-center">
-      <p class="text-lg">
+    <div class="bg-flag-green/30 rounded-md p-2 my-4 text-center">
+      <p class="text-lg mt-2">
         امشب رأس ساعت ۲۱ چراغ‌های منزل خود را برای یک دقیقه خاموش کنید.
       </p>
-      <div class="flex flex-col mt-4">
+      <div class="flex flex-col mt-5">
         <div class="text-2xl font-medium font-mono" id="countdown">
           00:00:00
         </div>
         <div>مانده تا ساعت ۲۱</div>
       </div>
+      <div class="mt-4">توضیح بیشتر &larr;</div>
     </div>
 
     <p>
-      پیروزی موفقیت‌آمیز انقلاب نیاز به مشارکت همگانی مردم دارد. این صفحه با
-      توجه به شرایط فعلی کشور، انقلاب، و توانایی‌های شما، فعالیت‌هایی پیشنهاد
-      می‌کند تا شما هم بتوانید با سایر مردم به طور متحد و بدون ریسک هزینه
-      جانی/مالی در انقلاب مشارکت داشته باشید.
-    </p>
-    <p class="mt-2">
-      به خاطر داشته باشید مشارکت شما هر چقدر هم به نظر کوچک بیاید برای پیروزی
+      کادر بالا با توجه به شرایط فعلی کشور و انقلاب، فعالیت‌هایی پیشنهاد می‌کند
+      تا بتوانید با سایر مردم به طور متحد و بدون ریسک هزینه جانی/مالی در انقلاب
+      مشارکت داشته باشید. فراموش نکنید پیروزی موفقیت‌آمیز انقلاب نیاز به مشارکت
+      همگانی مردم دارد. مشارکت شما هر چقدر هم به نظر کوچک بیاید برای پیروزی
       موفقیت‌آمیز انقلاب الزامی است. بدون قطره‌های آب دریایی وجود نخواهد داشت.
     </p>
-    <p class="mt-2">
-      برای پیشنهاد فعالیت‌های مخصوص شما، به سوالات زیر پاسخ دهید.
+
+    <h3 class="mt-4 text-lg font-medium">شخصی سازی</h3>
+    <p>
+      برای شخصی‌سازی فعالیت‌های پیشنهادی بر اساس شرایط شما، به سوالات زیر پاسخ
+      دهید.
     </p>
+    <div class="mt-2">
+      آیا در ایران زندگی می‌کنید؟
+      <span class="choice">بله در ایران زندگی می‌کنم.</span>
+      /
+      <span class="choice">خیر در خارج از ایران زندگی می‌کنم.</span>
+    </div>
+    <div class="mt-2">
+      تا چه حد می‌توانید برای فعالیت‌های انقلابی زمان بگذارید؟
+      <span class="choice">حداکثر تا ۳۰ دقیقه در هفته</span>
+      /
+      <span class="choice">حداکثر تا ۳ ساعت در هفته</span>
+      /
+      <span class="choice">حداکثر تا ۶ ساعت در هفته</span>
+      /
+      <span class="choice">بیش از ۶ ساعت در هفته</span>
+    </div>
   </SectionIntro>
 </Layout>
 
@@ -57,3 +74,9 @@ import Layout from "../layouts/Layout.astro";
     countdownDiv.innerHTML = `${hours}:${minutes}:${seconds}`;
   }, 1000);
 </script>
+
+<style>
+  .choice {
+    @apply cursor-pointer hover:text-flag-gold;
+  }
+</style>
