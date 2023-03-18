@@ -1,0 +1,69 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+---
+
+<BaseLayout title="9PM">
+  <header class="text-center mt-6 text-lg">
+    <a href="/"><div>انقلاب مردمی ایران</div></a>
+  </header>
+  <main class="max-w-screen-md m-auto py-4 px-2">
+    <h1 class="text-3xl text-center mt-2 mb-6">مشارکت در شعار های شبانه</h1>
+    <ul role="list" class="link-card-grid">
+      <Card
+        title="نحوه مشارکت"
+        body="شعارهای شبانه چیست و چطور مشارکت کنیم؟"
+        href="hhh"
+        night
+      />
+      <Card
+        title="منطق مشارکت"
+        body="مشارکت در شعارهای شبانه چطور به پیروزی کمک می‌کند؟"
+        href="hhh"
+        night
+      />
+      <Card
+        title="اَپلیکیشن اندروید"
+        body="زنگ یادآور و شمارش مشارکت کنندگان با استفاده از بلوتوث"
+        href="hhh"
+        night
+      />
+      <Card
+        title="شروع در محله جدید"
+        body="چطور در محله‌ی ساکتِ خود مشارکت کننده جمع کنیم؟"
+        href="hhh"
+        night
+      />
+    </ul>
+  </main>
+</BaseLayout>
+
+<style>
+  html {
+    background: url(/ninepm-bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+  }
+
+  html::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: hsla(0, 0%, 0%, 0.35);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+</style>

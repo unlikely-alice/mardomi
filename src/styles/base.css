@@ -20,13 +20,6 @@
   --flag-red: 235, 64, 52;
 
   --accent: var(--flag-gold);
-  --accent-gradient: linear-gradient(
-    45deg,
-    rgb(var(--flag-red)),
-    rgb(var(--flag-gold)) 20%,
-    rgb(var(--flag-green)) 40%,
-    white 60%
-  );
 }
 
 html {
