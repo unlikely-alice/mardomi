@@ -23,7 +23,7 @@ const { href, title, body, night } = Astro.props;
 
 <style>
   .day {
-    --bg-color: white;
+    --bg-color: #fff;
     --fg-color1: #111;
     --fg-color2: #444;
     --accent-gradient: linear-gradient(
@@ -60,6 +60,7 @@ const { href, title, body, night } = Astro.props;
     transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    border: solid 1px rgb(var(--flag-gold), 0.35);
   }
 
   .link-card > a {

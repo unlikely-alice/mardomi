@@ -1,0 +1,29 @@
+---
+const { frontmatter } = Astro.props;
+import "../styles/base.css";
+---
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title}</title>
+  </head>
+  <body>
+    <header class="border-gray-200 border-b text-center py-2">
+      <a href="/" class="font-medium text-lg">
+        <span style="color: rgb(var(--flag-green))">انقلاب</span>
+        <span style="color: rgb(var(--flag-gold))">مَردُمی</span>
+        <span style="color: rgb(var(--flag-red))">ایران</span>
+      </a>
+    </header>
+    <main class="pt-8 pb-4 px-4">
+      <article class="prose mx-auto max-w-screen-sm">
+        <slot />
+      </article>
+    </main>
+  </body>
+</html>
