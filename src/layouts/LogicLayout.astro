@@ -1,0 +1,58 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title}>
+  <header>
+    <div class="border-gray-200 border-b text-center py-2">
+      <a href="/" class="font-medium text-lg">
+        <span style="color: rgb(var(--flag-green))">انقلاب</span>
+        <span style="color: rgb(var(--flag-gold))">مَردُمی</span>
+        <span style="color: rgb(var(--flag-red))">ایران</span>
+      </a>
+    </div>
+    <nav aria-label="Breadcrumb" class="breadcrumb px-4 mt-2">
+      <ul class="mx-auto max-w-screen-sm">
+        <li><a href="/">خانه</a></li>
+        <li><a href="/logic">منطق انقلاب</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="pt-8 pb-4 px-4">
+    <article class="prose mx-auto max-w-screen-sm">
+      <slot />
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  .breadcrumb a {
+    text-decoration: underline;
+    text-decoration-thickness: max(1px, 0.0625rem);
+    text-decoration-color: #505a5f;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration-thickness: max(2px, 0.125rem);
+    text-decoration-color: #191b1c;
+  }
+
+  .breadcrumb ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+
+  .breadcrumb li:not(:last-child)::after {
+    content: "";
+    border: solid;
+    border-color: #505a5f;
+    border-width: max(1.5px, 0.09375em) 0 0 max(1.5px, 0.09375em);
+    display: inline-block;
+    width: 0.4375em;
+    height: 0.4375em;
+    transform: rotate(-45deg);
+    margin: 0 0.4rem 0 0.65rem;
+  }
+</style>
